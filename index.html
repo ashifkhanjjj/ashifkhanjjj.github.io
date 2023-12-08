@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Audio player</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="main">
+    <!-- top section -->
+    <div class="top_section">
+      <h5>Audio Player&nbsp;&nbsp;<i class="fa fa-headphones" aria-hidden="true"></i></h5>
+    </div>
+
+    <div class="tracks">
+      <!-- list of song will add here from 'song_list.js' file -->
+
+      <!-- small music player -->
+      <div class="small_music_player">
+        <div class="s_player_img">
+          <div class="playing_img">
+            <img src="images/1.jpg" alt="">
+          </div>
+          <!-- wave animation part -->
+          <div class="wave_animation">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </div>
+        </div>
+        <div class="song_detail">
+          <p id="song_name">คำหวาน (ที่เธอไม่เอา)</p>
+          <p id="artist_name">UMA [LIVE] @TWIO3 KORAT</p>
+        </div>
+        <i class="fa fa-chevron-up" aria-hidden="true" id="up_player"></i>
+      </div>
+
+      <!--  popup music player part -->
+      <div class="popup_music_player">
+        <div class="top">
+          <p>Now Playing</p>
+          <i class="fa fa-chevron-down" aria-hidden="true" id="down_player"></i>
+        </div>
+        <div class="main-wrapper">
+          <div class="header">
+          </div>
+          <div class="song-wrapper">
+            <div class="song-thumb-wrapper">
+              <svg class="song-progress" width="200" height="200" viewBox="0 0 200 200">
+                <circle class="song-progress-meter" cx="100" cy="100" r="90" stroke="#4d3f61" stroke-width="10"
+                  fill="none" />>
+              </svg>
+              <div class="song-thumb"></div>
+            </div>
+
+            <div class="song_description">
+              <span class="song-info-title" id="current_track_name">Make Me Move</span><br>
+              <span class="song-info-artist" id="current_singer_name">Marshmellow</span><br>
+              <span class="song-info-album" id="current_album">Alone, 2016</span>
+            </div>
+          </div>
+          <div class="progress_part">
+            <input type="range" min="0" max="100" value="0" id="slider" onchange="change_duration()">
+            <div class="progress-trail"></div>
+            <div class="durations">
+              <p id="current_duration">0:00</p>
+              <p id="total_duration">0:00</p>
+            </div>
+          </div>
+          <div class="player-wrapper">
+            <button id="loop_btn"><i class="fa fa-spinner" aria-hidden="true"></i></button>
+            <button id="backward_btn"><i class="fa fa-caret-left player-move-btn" aria-hidden="true"></i></button>
+            <button id="play_pause_btn"><i class="fa fa-pause-circle fa-beat" aria-hidden="true"></i></button>
+            <button id="forward_btn"><i class="fa fa-caret-right player-move-btn" aria-hidden="true"></i></button>
+            <button id="random_btn"><i class="fa fa-random" aria-hidden="true"></i></button>
+          </div>
+          <div class="volume-wrapper">
+            <i class="fa fa-volume-mute" style="text-align: right" onclick="adjustVolume(0)"></i>
+            <div class="volume-bar">
+              <input type="range" name="volume-slider" id="volume-slider" min="0" max="1" step="0.1" value="0.5 "
+                onchange="adjustVolume(this.value)">
+              <div class="volume-trail"></div>
+            </div>
+            <i class="fa fa-volume-up" style="text-align: right" onclick="adjustVolume(1)"></i>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <!-- song list file -->
+      <script src="song_list.js"></script>
+      <!-- javascript -->
+      <script src="main.js"></script>
+      <!-- font awesome -->
+      <script src="https://kit.fontawesome.com/fd1bd64178.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
