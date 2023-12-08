@@ -263,5 +263,5 @@ function play_song() {
   current_singer_name.innerHTML = All_song[index_no].singer;
   current_album.innerHTML = All_song[index_no].album;
   play_pause_btn.innerHTML =
-    '<i class="fa fa-circle-pause" aria-hidden="true"></i>';
+    '<i class="fa fa-pause-circle fa-beat" aria-hidden="true"></i>';
 }
